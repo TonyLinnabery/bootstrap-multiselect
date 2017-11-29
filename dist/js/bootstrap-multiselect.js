@@ -326,6 +326,7 @@
             filterBehavior: 'text',
             includeFilterClearBtn: true,
             preventInputChangeEvent: false,
+			rangeSelect: true,
             nonSelectedText: 'None selected',
             nSelectedText: 'selected',
             allSelectedText: 'All selected',
@@ -543,7 +544,7 @@
 
                 var $target = $(event.target);
                 
-                if (event.shiftKey && this.options.multiple) {
+                if (event.shiftKey && this.options.multiple && this.option.rangeSelect) {
                     if($target.is("label")){ // Handles checkbox selection manually (see https://github.com/davidstutz/bootstrap-multiselect/issues/431)
                         event.preventDefault();
                         $target = $target.find("input");
